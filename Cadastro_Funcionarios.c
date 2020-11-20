@@ -22,17 +22,16 @@ int main(void)
 
     //Matrícula
     int Matricula_Funcionario;
-    fprintf(ponteiro_arquivo, "\n\n\n\nMATRICULA");
     printf("\n\n\n\nMATRICULA");
     printf("\n\nDIGITE O NUMERO DA MATRICULA DO FUNCIONARIO: ");
     scanf("%d", &Matricula_Funcionario);
-    fprintf(ponteiro_arquivo, "\n\nMatricula: %d", Matricula_Funcionario); //Para salvar no notepad
+    fprintf(ponteiro_arquivo, "\n\n\nMatricula: %d", Matricula_Funcionario); //Para salvar no notepad
     printf("Matricula: %d", Matricula_Funcionario); //Para exibir no programa o que foi digitado
 
     //Tipo de Contrato
     int Escolha_Tipo_Contrato;
 
-    fprintf(ponteiro_arquivo, "\n\nTIPO DE CONTRATO");
+    fprintf(ponteiro_arquivo, "\n\nTIPO DE CONTRATO: ");
     printf("\n\nTIPO DE CONTRATO");
     printf("\n\nUTILIZE O NUMERO CORRESPONDENTE A UMA DAS SEGUINTES OPCOES: ");
 
@@ -48,22 +47,22 @@ int main(void)
     switch (Escolha_Tipo_Contrato)
     {
         case 1 :
-        fprintf(ponteiro_arquivo, "CONTRATO REF. CLT SELECIONADO!");
+        fprintf(ponteiro_arquivo, "CONSOLIDACAO DAS LEIS TRABALHISTAS");
         printf("CONTRATO REF. CLT SELECIONADO!");
         break;
 
         case 2 :
-        fprintf(ponteiro_arquivo, "CONTRATO REF. PJ(PRESTADOR DE SERVICOS) SELECIONADO!");
+        fprintf(ponteiro_arquivo, "PJ - PRESTADOR DE SERVICOS");
         printf("CONTRATO REF. PJ(PRESTADOR DE SERVICOS) SELECIONADO!");
         break;
 
         case 3 :
-        fprintf(ponteiro_arquivo, "CONTRATO REF. ESTAGIO SELECIONADO!");
+        fprintf(ponteiro_arquivo, "ESTAGIO");
         printf("CONTRATO REF. ESTAGIO SELECIONADO!");
         break;
 
         case 4 :
-        fprintf(ponteiro_arquivo, "CONTRATO REF. JOVEM APRENDIZ SELECIONADO!");
+        fprintf(ponteiro_arquivo, "JOVEM APRENDIZ");
         printf("CONTRATO REF. JOVEM APRENDIZ SELECIONADO!");
         break;
 
@@ -78,9 +77,26 @@ int main(void)
     //Dados de Nome
     char Nome_Completo[100];
     printf("\n\n\n\nNOME COMPLETO: ");
-    scanf("%s", &Nome_Completo);
+    scanf(" %[^\n]s", &Nome_Completo); //***Espaço antes do %s limpa o Buffer!!!
     fprintf (ponteiro_arquivo, "\n\nNome Completo: %s", Nome_Completo);
     printf ("Nome Completo: %s", Nome_Completo);
+
+    //Data de Nascimento com um campo para cada
+    int Dia_Nasc;
+    int Mes_Nasc;
+    int Ano_Nasc;
+    printf("\n\n\n\t\t\t\t\t\t\t\t\tDATA DE NASCIMENTO");
+
+    printf("\n\n\nDIA: ");
+    scanf("%d", &Dia_Nasc);
+    printf("MES: ");
+    scanf("%d", &Mes_Nasc);
+    printf("ANO COM QUATRO DIGITOS: ");
+    scanf("%d", &Ano_Nasc);
+
+    fprintf(ponteiro_arquivo, "\nData de Nascimento: %02d/ %02d/ %d", Dia_Nasc, Mes_Nasc, Ano_Nasc);
+    printf("\nData de Nascimento: %02d/ %02d/ %d", Dia_Nasc, Mes_Nasc, Ano_Nasc);
+    //Fechando campo de data
 
 
     //Dados de Contato
@@ -106,7 +122,6 @@ int main(void)
 
     fprintf(ponteiro_arquivo, "\n\nTelefone Fixo: (%i) %i", DDD_Fixo, Tel_Fixo);
     printf("\nTelefone Fixo: (%i) %i", DDD_Fixo, Tel_Fixo);
-
 
     //Todos usam o mesmo princípio:
     printf("\n\nTELEFONE CELULAR");
@@ -139,27 +154,11 @@ int main(void)
     fprintf(ponteiro_arquivo, "\nEmail Corporativo: %s", Email_Corporativo);
     printf("Email Corporativo: %s", Email_Corporativo);
 
-
-    //Data de Nascimento com um campo para cada
-    int Dia_Nasc;
-    int Mes_Nasc;
-    int Ano_Nasc;
-    printf("\n\n\n\t\t\t\t\t\t\t\t\tDATA DE NASCIMENTO");
-
-    printf("\n\n\nDIA: ");
-    scanf("%d", &Dia_Nasc);
-    printf("MES: ");
-    scanf("%d", &Mes_Nasc);
-    printf("ANO COM QUATRO DIGITOS: ");
-    scanf("%d", &Ano_Nasc);
-
-    fprintf(ponteiro_arquivo, "\n\nData de Nascimento: %02d/ %02d/ %d", Dia_Nasc, Mes_Nasc, Ano_Nasc);
-    printf("\nData de Nascimento: %02d/ %02d/ %d", Dia_Nasc, Mes_Nasc, Ano_Nasc);
-    //Fechando campo de data
+    //-------------------------------------------------
 
     //Estado Civil
     int Escolha_EstadoCivil;
-    fprintf(ponteiro_arquivo, "\n\n\t\t\t\t\t\t\t\t\t   ESTADO CIVIL\n\n");
+    fprintf(ponteiro_arquivo, "\n\n\t\t\t\t\t\t\t\t\t\tESTADO CIVIL\n\n");
     printf("\n\n\t\t\t\t\t\t\t\t\t   ESTADO CIVIL");
     printf("\n\n\nUTILIZE O NUMERO CORRESPONDENTE A UMA DAS SEGUINTES OPCOES: ");
 
@@ -210,18 +209,18 @@ int main(void)
     char Nome_Mae[100];
     char Nome_Pai[100];
 
-    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\t  NOME DOS PAIS");
+    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\t\tNOME DOS PAIS");
     printf("\n\n\n\t\t\t\t\t\t\t\t\t  NOME DOS PAIS");
 
     //PROBLEMAS DE NOME COM ESPAÇO ACONTECENDO
     printf("\n\n\nNOME DA MAE: ");
-    scanf("%s", &Nome_Mae);
+    scanf(" %[^\n]s", &Nome_Mae);
     fprintf(ponteiro_arquivo, "\n\nNome da Mae: %s", Nome_Mae);
     printf("Nome da Mae: %s", Nome_Mae);
 
     //PROBLEMAS DE NOME COM ESPAÇO ACONTECENDO
     printf("\n\nNOME DO PAI: ");
-    scanf("%s", &Nome_Pai);
+    scanf(" %[^\n]s", &Nome_Pai);
     fprintf(ponteiro_arquivo, "\nNome do Pai: %s", Nome_Pai);
     printf("Nome do Pai: %s", Nome_Pai);
 
@@ -239,7 +238,7 @@ int main(void)
 
     printf("\n\n\nRG (INCLUINDO TRACOS, NUMEROS OU LETRAS): ");
     scanf("%s", &Num_RG);
-    fprintf(ponteiro_arquivo, "N RG: %s", Num_RG);
+    fprintf(ponteiro_arquivo, "\n\nN RG: %s", Num_RG);
     printf("N RG: %s", Num_RG);
 
     printf("\n\nDATA DA EXPEDICAO");
@@ -260,21 +259,21 @@ int main(void)
 
     //PROBLEMAS DE NOME COM ESPAÇO ACONTECENDO
     printf("\n\nORGAO EXPEDIDOR: ");
-    scanf("%s", &Orgao_Expedidor_RG);
+    scanf(" %[^\n]s", &Orgao_Expedidor_RG);
     fprintf(ponteiro_arquivo, "\nOrgao Expedidor: %s", Orgao_Expedidor_RG);
     printf("Orgao Expedidor: %s", Orgao_Expedidor_RG);
 
     char Naturalidade_RG[50];
 
     printf("\n\nNATURALIDADE: ");
-    scanf("%s", &Naturalidade_RG);
+    scanf(" %[^\n]s", &Naturalidade_RG);
     fprintf(ponteiro_arquivo, "\nNaturalidade: %s", Naturalidade_RG);
     printf("Naturalidade: %s", Naturalidade_RG);
 
     //INICIO UF do RG
     //Switch Case para UF do RG!
     int Escolha_UF_RG;
-    fprintf(ponteiro_arquivo, "\n\nUNIDADE FEDERATIVA");
+    fprintf(ponteiro_arquivo, "\nEstado: ");
     printf("\n\nUNIDADE FEDERATIVA");
     printf("\n\nUTILIZE O NUMERO CORRESPONDENTE A UMA DAS SEGUINTES OPCOES: ");
 
@@ -313,137 +312,137 @@ int main(void)
     switch (Escolha_UF_RG)
     {
         case 1 :
-            fprintf(ponteiro_arquivo, "\n1 - AC");
+            fprintf(ponteiro_arquivo, "AC");
             printf("\n1 - AC");
             break;
 
         case 2 :
-            fprintf(ponteiro_arquivo, "\n2 - AL");
+            fprintf(ponteiro_arquivo, "AL");
             printf("\n2 - AL");
             break;
 
         case 3 :
-            fprintf(ponteiro_arquivo, "\n3 - AP");
+            fprintf(ponteiro_arquivo, "AP");
             printf("\n3 - AP");
             break;
 
         case 4 :
-            fprintf(ponteiro_arquivo, "\n4 - AM");
+            fprintf(ponteiro_arquivo, "AM");
             printf("\n4 - AM");
             break;
 
         case 5 :
-            fprintf(ponteiro_arquivo, "\n5 - BA");
+            fprintf(ponteiro_arquivo, "BA");
             printf("\n5 - BA");
             break;
 
         case 6 :
-            fprintf(ponteiro_arquivo, "\n6 - CE");
+            fprintf(ponteiro_arquivo, "CE");
             printf("\n6 - CE");
             break;
 
         case 7 :
-            fprintf(ponteiro_arquivo, "\n7 - DF");
+            fprintf(ponteiro_arquivo, "DF");
             printf("\n7 - DF");
             break;
 
         case 8 :
-            fprintf(ponteiro_arquivo, "\n8 - ES");
+            fprintf(ponteiro_arquivo, "ES");
             printf("\n8 - ES");
             break;
 
         case 9 :
-            fprintf(ponteiro_arquivo, "\n9 - ES");
+            fprintf(ponteiro_arquivo, "GO");
             printf("\n9 - GO");
             break;
 
         case 10 :
-            fprintf(ponteiro_arquivo, "\n10 - MA");
+            fprintf(ponteiro_arquivo, "MA");
             printf("\n10 - MA");
             break;
 
         case 11 :
-            fprintf(ponteiro_arquivo, "\n11 - MT");
+            fprintf(ponteiro_arquivo, "MT");
             printf("\n11 - MT");
             break;
 
         case 12 :
-            fprintf(ponteiro_arquivo, "\n12 - MS");
+            fprintf(ponteiro_arquivo, "MS");
             printf("\n12 - MS");
             break;
 
         case 13 :
-            fprintf(ponteiro_arquivo, "\n13 - MG");
+            fprintf(ponteiro_arquivo, "MG");
             printf("\n13 - MG");
             break;
 
         case 14 :
-            fprintf(ponteiro_arquivo, "\n14 - PA");
+            fprintf(ponteiro_arquivo, "PA");
             printf("\n14 - PA");
             break;
 
         case 15 :
-            fprintf(ponteiro_arquivo, "\n15 - PB");
+            fprintf(ponteiro_arquivo, "PB");
             printf("\n15 - PB");
             break;
 
         case 16 :
-            fprintf(ponteiro_arquivo, "\n16 - PR");
+            fprintf(ponteiro_arquivo, "PR");
             printf("\n16 - PR");
             break;
 
         case 17 :
-            fprintf(ponteiro_arquivo, "\n17 - PE");
+            fprintf(ponteiro_arquivo, "PE");
             printf("\n17 - PE");
             break;
 
         case 18 :
-            fprintf(ponteiro_arquivo, "\n18 - PI");
+            fprintf(ponteiro_arquivo, "PI");
             printf("\n18 - PI");
             break;
 
         case 19 :
-            fprintf(ponteiro_arquivo, "\n19 - RJ");
+            fprintf(ponteiro_arquivo, "RJ");
             printf("\n19 - RJ");
             break;
 
         case 20 :
-            fprintf(ponteiro_arquivo, "\n20 - RN");
+            fprintf(ponteiro_arquivo, "RN");
             printf("\n20 - RN");
             break;
 
         case 21 :
-            fprintf(ponteiro_arquivo, "\n21 - RS");
+            fprintf(ponteiro_arquivo, "RS");
             printf("\n21 - RS");
             break;
 
         case 22 :
-            fprintf(ponteiro_arquivo, "\22 - RO");
+            fprintf(ponteiro_arquivo, "RO");
             printf("\n22 - RO");
             break;
 
         case 23 :
-            fprintf(ponteiro_arquivo, "\n23 - RR");
+            fprintf(ponteiro_arquivo, "RR");
             printf("\n23 - RR");
             break;
 
         case 24 :
-            fprintf(ponteiro_arquivo, "\n24 - SC");
+            fprintf(ponteiro_arquivo, "SC");
             printf("\n24 - SC");
             break;
 
         case 25 :
-            fprintf(ponteiro_arquivo, "\n25 - SP");
+            fprintf(ponteiro_arquivo, "SP");
             printf("\n25 - SP");
             break;
 
         case 26 :
-            fprintf(ponteiro_arquivo, "\n26 - SE");
+            fprintf(ponteiro_arquivo, "SE");
             printf("\n26 - SE");
             break;
 
         case 27 :
-            fprintf(ponteiro_arquivo, "\n27 - TO");
+            fprintf(ponteiro_arquivo, "TO");
             printf("\n27 - TO");
             break;
 
@@ -454,7 +453,7 @@ int main(void)
     //Fim do Switch Case para UF do RG
     //ENCERRA RG
 
-    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\tCADASTRO DE PESSOAS FISICAS");
+    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\tCADASTRO DE PESSOAS FISICAS");
     printf("\n\n\n\t\t\t\t\t\t\t\t\tCADASTRO DE PESSOAS FISICAS");
 
     //CADASTRO DE PESSOAS FÍSICAS
@@ -493,10 +492,10 @@ int main(void)
     int Ano_Exped_CTPS;
     char Num_PIS[15];
 
-    printf("\n\n\nN CTPS (INCLUINDO PONTOS, NUM. DE SERIE E LETRAS): ");
-    scanf("%s", &Num_CTPS);
-    fprintf(ponteiro_arquivo, "N CTPS: %s", Num_CTPS); //CTPS
-    printf("\n\nN CTPS: %s", Num_CTPS); //CTPS
+    printf("\n\n\nN CTPS (NUMERO/ SERIE - UF): ");
+    scanf(" %[^\n]s", &Num_CTPS);
+    fprintf(ponteiro_arquivo, "\n\nN CTPS: %s", Num_CTPS); //CTPS
+    printf("N CTPS: %s", Num_CTPS); //CTPS
 
     printf("\n\nDATA DA EXPEDICAO");
 
@@ -521,7 +520,7 @@ int main(void)
     //TÍTULO DE ELEITOR
     int Num_Inscricao;
     int Zona;
-    int Secao;
+    char Secao[4];
 
     fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\tTITULO DE ELEITOR");
     printf("\n\n\n\t\t\t\t\t\t\t\t\tTITULO DE ELEITOR");
@@ -537,13 +536,21 @@ int main(void)
     printf("Zona: %i", Zona);
 
     printf("\n\nSECAO: ");
-    scanf("%i", &Secao);
-    fprintf(ponteiro_arquivo, "\nSecao: %i", Secao);
-    printf("Secao: %i", Secao);
+    scanf("%s", &Secao);
+    fprintf(ponteiro_arquivo, "\nSecao: %s", Secao);
+    printf("Secao: %s", Secao);
+
+    //Município do Título
+    char Municipio_Titulo[50];
+
+    printf("\n\nMUNICIPIO: ");
+    scanf(" %[^\n]s", &Municipio_Titulo);
+    fprintf(ponteiro_arquivo, "\nMunicipio: %s", Municipio_Titulo);
+    printf("Municipio: %s", Municipio_Titulo);
 
     //Switch Case para UF do título!
     int Escolha_UF_Titulo;
-    fprintf(ponteiro_arquivo, "\n\nUNIDADE FEDERATIVA");
+    fprintf(ponteiro_arquivo, "\nEstado: ");
     printf("\n\nUNIDADE FEDERATIVA");
     printf("\n\nUTILIZE O NUMERO CORRESPONDENTE A UMA DAS SEGUINTES OPCOES: ");
 
@@ -582,137 +589,111 @@ int main(void)
     switch (Escolha_UF_Titulo)
     {
         case 1 :
-            fprintf(ponteiro_arquivo, "\n1 - AC");
+            fprintf(ponteiro_arquivo, "AC");
             printf("\n1 - AC");
             break;
-
         case 2 :
-            fprintf(ponteiro_arquivo, "\n2 - AL");
+            fprintf(ponteiro_arquivo, "AL");
             printf("\n2 - AL");
             break;
-
         case 3 :
-            fprintf(ponteiro_arquivo, "\n3 - AP");
+            fprintf(ponteiro_arquivo, "AP");
             printf("\n3 - AP");
             break;
-
         case 4 :
-            fprintf(ponteiro_arquivo, "\n4 - AM");
+            fprintf(ponteiro_arquivo, "AM");
             printf("\n4 - AM");
             break;
-
         case 5 :
-            fprintf(ponteiro_arquivo, "\n5 - BA");
+            fprintf(ponteiro_arquivo, "BA");
             printf("\n5 - BA");
             break;
-
         case 6 :
-            fprintf(ponteiro_arquivo, "\n6 - CE");
+            fprintf(ponteiro_arquivo, "CE");
             printf("\n6 - CE");
             break;
-
         case 7 :
-            fprintf(ponteiro_arquivo, "\n7 - DF");
+            fprintf(ponteiro_arquivo, "DF");
             printf("\n7 - DF");
             break;
-
         case 8 :
-            fprintf(ponteiro_arquivo, "\n8 - ES");
+            fprintf(ponteiro_arquivo, "ES");
             printf("\n8 - ES");
             break;
-
         case 9 :
-            fprintf(ponteiro_arquivo, "\n9 - ES");
+            fprintf(ponteiro_arquivo, "GO");
             printf("\n9 - GO");
             break;
-
         case 10 :
-            fprintf(ponteiro_arquivo, "\n10 - MA");
+            fprintf(ponteiro_arquivo, "MA");
             printf("\n10 - MA");
             break;
-
         case 11 :
-            fprintf(ponteiro_arquivo, "\n11 - MT");
+            fprintf(ponteiro_arquivo, "MT");
             printf("\n11 - MT");
             break;
-
         case 12 :
-            fprintf(ponteiro_arquivo, "\n12 - MS");
+            fprintf(ponteiro_arquivo, "MS");
             printf("\n12 - MS");
             break;
-
         case 13 :
-            fprintf(ponteiro_arquivo, "\n13 - MG");
+            fprintf(ponteiro_arquivo, "MG");
             printf("\n13 - MG");
             break;
-
         case 14 :
-            fprintf(ponteiro_arquivo, "\n14 - PA");
+            fprintf(ponteiro_arquivo, "PA");
             printf("\n14 - PA");
             break;
-
         case 15 :
-            fprintf(ponteiro_arquivo, "\n15 - PB");
+            fprintf(ponteiro_arquivo, "PB");
             printf("\n15 - PB");
             break;
-
         case 16 :
-            fprintf(ponteiro_arquivo, "\n16 - PR");
+            fprintf(ponteiro_arquivo, "PR");
             printf("\n16 - PR");
             break;
-
         case 17 :
-            fprintf(ponteiro_arquivo, "\n17 - PE");
+            fprintf(ponteiro_arquivo, "PE");
             printf("\n17 - PE");
             break;
-
         case 18 :
-            fprintf(ponteiro_arquivo, "\n18 - PI");
+            fprintf(ponteiro_arquivo, "PI");
             printf("\n18 - PI");
             break;
-
         case 19 :
-            fprintf(ponteiro_arquivo, "\n19 - RJ");
+            fprintf(ponteiro_arquivo, "RJ");
             printf("\n19 - RJ");
             break;
-
         case 20 :
-            fprintf(ponteiro_arquivo, "\n20 - RN");
+            fprintf(ponteiro_arquivo, "RN");
             printf("\n20 - RN");
             break;
-
         case 21 :
-            fprintf(ponteiro_arquivo, "\n21 - RS");
+            fprintf(ponteiro_arquivo, "RS");
             printf("\n21 - RS");
             break;
-
         case 22 :
-            fprintf(ponteiro_arquivo, "\22 - RO");
+            fprintf(ponteiro_arquivo, "RO");
             printf("\n22 - RO");
             break;
-
         case 23 :
-            fprintf(ponteiro_arquivo, "\n23 - RR");
+            fprintf(ponteiro_arquivo, "RR");
             printf("\n23 - RR");
             break;
-
         case 24 :
-            fprintf(ponteiro_arquivo, "\n24 - SC");
+            fprintf(ponteiro_arquivo, "SC");
             printf("\n24 - SC");
             break;
-
         case 25 :
-            fprintf(ponteiro_arquivo, "\n25 - SP");
+            fprintf(ponteiro_arquivo, "SP");
             printf("\n25 - SP");
             break;
-
         case 26 :
-            fprintf(ponteiro_arquivo, "\n26 - SE");
+            fprintf(ponteiro_arquivo, "SE");
             printf("\n26 - SE");
             break;
-
         case 27 :
-            fprintf(ponteiro_arquivo, "\n27 - TO");
+            fprintf(ponteiro_arquivo, "TO");
             printf("\n27 - TO");
             break;
 
@@ -722,16 +703,10 @@ int main(void)
     }
     //Fim do Switch Case do UF do Titulo
 
-    //Município do Título
-    char Municipio_Titulo[50];
+    //Expedição
     int Dia_Exped_Titulo;
     int Mes_Exped_Titulo;
     int Ano_Exped_Titulo;
-
-    printf("\n\nMUNICIPIO: ");
-    scanf("%s", &Municipio_Titulo);
-    fprintf(ponteiro_arquivo, "\n\nMunicipio: %s", Municipio_Titulo);
-    printf("Municipio: %s", Municipio_Titulo);
 
     //Data da Expedição do Título
     printf("\n\nDATA DA EXPEDICAO");
@@ -751,7 +726,7 @@ int main(void)
 
     //INÍCIO CERTIFICADO MILITAR
     int Escolha_Certificado_Militar;
-    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\t\t RESERVISTA\n");
+    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\tRESERVISTA\n");
     printf("\n\n\n\t\t\t\t\t\t\t\t\t\t RESERVISTA");
 
     printf("\n\n\nESCOLHA O NUMERO CORRESPONDENTE AO DOCUMENTO: ");
@@ -781,7 +756,7 @@ int main(void)
 
     //Certificado de Dispensa de Incorporacao
     int N_CDI;
-    int RA_CDI;
+    char RA_CDI [12];
     char Serie_CDI[1];
 
     if (Escolha_Certificado_Militar == 1)
@@ -792,9 +767,9 @@ int main(void)
         printf("Numero: %d", N_CDI);
 
         printf("\n\nRA: ");
-        scanf("%d", &RA_CDI);
-        fprintf(ponteiro_arquivo, "\nRA: %d", RA_CDI);
-        printf("RA: %d", RA_CDI);
+        scanf("%s", &RA_CDI);
+        fprintf(ponteiro_arquivo, "\nRA: %s", RA_CDI);
+        printf("RA: %s", RA_CDI);
 
         printf("\n\nSERIE: ");
         scanf("%s", &Serie_CDI);
@@ -828,11 +803,11 @@ int main(void)
     int Matricula_Registro;
     int Folha_Registro;
 
-    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\t\tREGISTRO CIVIL");
+    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\tREGISTRO CIVIL");
     printf("\n\n\n\t\t\t\t\t\t\t\t\t\tREGISTRO CIVIL");
 
     printf("\n\n\nCARTORIO EMISSOR: ");
-    scanf("%s", &Cartorio_Emissor);
+    scanf(" %[^\n]s", &Cartorio_Emissor);
     fprintf(ponteiro_arquivo, "\n\nCartorio: %s", Cartorio_Emissor);
     printf("Cartorio: %s", Cartorio_Emissor);
 
@@ -852,7 +827,7 @@ int main(void)
     printf("\nData de Emissao: %02d/ %02d/ %d", Dia_Exped_Registro, Mes_Exped_Registro, Ano_Exped_Registro);
     //Fim da Data de Emissao
 
-    printf("\n\nMATRICULA/ NUMERO DE ORDEM (SEM ESPACOS): ");
+    printf("\n\nMATRICULA/ NUMERO DE ORDEM (APENAS NUMEROS): ");
     scanf("%d", &Matricula_Registro);
     fprintf(ponteiro_arquivo, "\nMatricula: %d", Matricula_Registro);
     printf("Matricula: %d", Matricula_Registro);
@@ -870,9 +845,10 @@ int main(void)
 
     ---------------------------------*/
 
+    //SWITCH CASE PARA NÍVEL ACADÊMICO
     int Escolha_Nivel_Academico;
 
-    fprintf(ponteiro_arquivo, "\n\n\n\n\t\t\t\t\t\t\t\t\t\tFORMACAO ACADEMICA\n");
+    fprintf(ponteiro_arquivo, "\n\n\n\n\t\t\t\t\t\t\t\t\tFORMACAO ACADEMICA\n");
     printf("\n\n\n\n\t\t\t\t\t\t\t\t\t\tFORMACAO ACADEMICA");
     printf("\n\n\n\nNIVEL (UTILIZE O NUMERO CORRESPONDENTE A UMA DAS SEGUINTES OPCOES): ");
 
@@ -937,15 +913,59 @@ int main(void)
             printf("\nVALOR INVALIDO!");
             goto loop_formacao;
     }
+    //FIM DO SWITCH CASE PARA NÍVEL ACADÊMICO
 
-    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\t\tDADOS DA FORMACAO");
+    //----------------------------------------------------
+
+    //SWITCH CASE DA SITUAÇÃO DA MATRÍCULA
+    int Escolha_Situacao_Matricula;
+    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\tSITUACAO DA MATRICULA\n");
+    printf("\n\n\n\t\t\t\t\t\t\t\t\t\tSITUACAO DA MATRICULA");
+    printf("\n\n\nDIGITE O NUMERO CORRESPONDENTE A SITUACAO: ");
+
+    printf("\n\n1 - CURSANDO");
+    printf("\n2 - TRANCADO");
+    printf("\n3 - INCOMPLETO");
+    printf("\n4 - CONCLUIDO");
+
+    loop_matricula:
+    printf("\n\nDIGITE O NUMERO ENTRE 1 E 4: ");
+    scanf("%i", &Escolha_Situacao_Matricula);
+
+    switch (Escolha_Situacao_Matricula)
+    {
+        case 1 :
+            fprintf(ponteiro_arquivo, "\n1 - Cursando");
+            printf("\n1 - Cursando");
+            break;
+        case 2 :
+            fprintf(ponteiro_arquivo, "\n2 - Trancado");
+            printf("\n2 - Trancado");
+            break;
+        case 3 :
+            fprintf(ponteiro_arquivo, "\n3 - Incompleto");
+            printf("\n3 - Incompleto");
+            break;
+        case 4 :
+            fprintf(ponteiro_arquivo, "\n4 - Concluido");
+            printf("\n4 - Concluido");
+            break;
+        default :
+            printf("\nVALOR INVALIDO");
+            goto loop_matricula;
+    }
+    //FIM DO SWITCH CASE DA MATRÍCULA
+
+    //----------------------------------------------------
+
+    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\tDADOS DA FORMACAO");
     printf("\n\n\n\t\t\t\t\t\t\t\t\t\tDADOS DA FORMACAO");
 
     //Curso
     char Nome_Curso[100];
 
-    printf("\n\n\nNOME DO CURSO (SE SELECIONADAS AS OPCOES ENTRE 1 E 3 DIGITE 'NAO HA DADOS'): ");
-    scanf("%s", &Nome_Curso);
+    printf("\n\n\nNOME DO CURSO: ");
+    scanf(" %[^\n]s", &Nome_Curso);
     fprintf(ponteiro_arquivo, "\n\nNome do Curso: %s", Nome_Curso);
     printf("Nome do Curso: %s", Nome_Curso);
 
@@ -953,7 +973,7 @@ int main(void)
     char Nome_Instituicao[100];
 
     printf("\n\nNOME DA INSTITUICAO: ");
-    scanf("%s", &Nome_Instituicao);
+    scanf(" %[^\n]s", &Nome_Instituicao);
     fprintf(ponteiro_arquivo, "\nNome da Instituicao: %s", Nome_Instituicao);
     printf("Nome da Instituicao: %s", Nome_Instituicao);
 
@@ -976,6 +996,8 @@ int main(void)
     fprintf(ponteiro_arquivo, "\nData de Ingresso: %02d/ %02d/ %d", Dia_Inicio_Curso, Mes_Inicio_Curso, Ano_Inicio_Curso);
     printf("\nData de Ingresso: %02d/ %02d/ %d", Dia_Inicio_Curso, Mes_Inicio_Curso, Ano_Inicio_Curso);
 
+    if (Escolha_Situacao_Matricula == 4)
+    {
     //Data da Conclusão
     int Dia_Termino_Curso;
     int Mes_Termino_Curso;
@@ -994,65 +1016,25 @@ int main(void)
 
     fprintf(ponteiro_arquivo, "\nData de Termino: %02d/ %02d/ %d", Dia_Termino_Curso, Mes_Termino_Curso, Ano_Termino_Curso);
     printf("\nData de Termino: %02d/ %02d/ %d", Dia_Termino_Curso, Mes_Termino_Curso, Ano_Termino_Curso);
-
-    //SWITCH CASE DA SITUAÇÃO DA MATRÍCULA
-    int Escolha_Situacao_Matricula;
-    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\tSITUACAO DA MATRICULA");
-    printf("\n\n\n\t\t\t\t\t\t\t\t\tSITUACAO DA MATRICULA");
-    printf("\n\n\nDIGITE O NUMERO CORRESPONDENTE A SITUACAO: ");
-
-    printf("\n\n1 - CURSANDO");
-    printf("\n2 - TRANCADO");
-    printf("\n3 - INCOMPLETO");
-    printf("\n4 - CONCLUIDO");
-
-    loop_matricula:
-    printf("\n\nDIGITE O NUMERO ENTRE 1 E 4: ");
-    scanf("%i", &Escolha_Situacao_Matricula);
-
-    switch (Escolha_Situacao_Matricula)
-    {
-        case 1 :
-            fprintf(ponteiro_arquivo, "\n1 - Cursando");
-            printf("\n1 - Cursando");
-            break;
-
-        case 2 :
-            fprintf(ponteiro_arquivo, "\n2 - Trancado");
-            printf("\n2 - Trancado");
-            break;
-
-        case 3 :
-            fprintf(ponteiro_arquivo, "\n3 - Incompleto");
-            printf("\n3 - Incompleto");
-            break;
-
-        case 4 :
-            fprintf(ponteiro_arquivo, "\n4 - Concluido");
-            printf("\n4 - Concluido");
-            break;
-
-        default :
-            printf("\nVALOR INVALIDO");
-            goto loop_matricula;
     }
-    //FIM DO SWITCH CASE DA MATRÍCULA
+
+    //----------------------------------------------------------------
 
     //ENDEREÇO
-    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\t\tENDERECO\n");
-    printf("\n\n\n\t\t\t\t\t\t\t\t\t\tENDERECO");
+    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\tENDERECO\n");
+    printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\tENDERECO");
 
     char Logradouro [100]; //Rua, Av, Praça, etc;
     char Num_Endereco[10];
     char Complemento [100]; //Complemento como Apto/ Casa/ Bloco/ Etc;
     char Bairro[100];
-    int CEP;
+    char CEP [9];
     char Referencia[100]; //Referência para localizar imóvel
     char Municipio_Endereco[100];
 
     //TENTATIVA ENDEREÇO
     printf("\n\n\nNOME DO LOGRADOURO (RUA, AV, PRACA, ETC): ");
-    scanf("%s", &Logradouro);
+    scanf(" %[^\n]s", &Logradouro);
     fprintf(ponteiro_arquivo, "\nLogradouro: %s", Logradouro);
     printf("Logradouro: %s", Logradouro);
 
@@ -1062,36 +1044,36 @@ int main(void)
     printf("Numero: %s", Num_Endereco);
 
     printf("\n\nCOMPLEMENTO (DIGITE S/N SE NAO HOUVER): ");
-    scanf("%s", &Complemento);
+    scanf(" %[^\n]s", &Complemento);
     fprintf(ponteiro_arquivo, "\nComplemento: %s", Complemento);
-    printf("ComplementO: %s", Complemento);
+    printf("Complemento: %s", Complemento);
 
     printf("\n\nBAIRRO: ");
-    scanf("%s", &Bairro);
+    scanf(" %[^\n]s", &Bairro);
     fprintf(ponteiro_arquivo, "\nBairro: %s", Bairro);
     printf("Bairro: %s", Bairro);
 
-    printf("\n\nCEP (APENAS NUMEROS): ");
-    scanf("%i", &CEP);
-    fprintf(ponteiro_arquivo, "\nCEP: %i", CEP);
-    printf("CEP: %i", CEP);
+    printf("\n\nCEP (INCLUINDO TRACOS): ");
+    scanf("%s", &CEP);
+    fprintf(ponteiro_arquivo, "\nCEP: %s", CEP);
+    printf("CEP: %s", CEP);
 
     printf("\n\nREFERENCIA (DIGITE 'NAO POSSUI' CASO NAO FOR INFORMADA): ");
-    scanf("%s", &Referencia);
+    scanf(" %[^\n]s", &Referencia);
     fprintf(ponteiro_arquivo, "\nReferencia: %s", Referencia);
     printf("Referencia: %s", Referencia);
 
     printf("\n\nMUNICIPIO: ");
-    scanf("%s", &Municipio_Endereco);
+    scanf(" %[^\n]s", &Municipio_Endereco);
     fprintf(ponteiro_arquivo, "\nMunicipio: %s\n", Municipio_Endereco);
     printf("Municipio: %s", Municipio_Endereco);
 
 
     //Switch Case para UF Endereço:
-    int Escolha_UF_Endereco;
-    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\t\tESTADO");
-    printf("\n\n\n\t\t\t\t\t\t\t\t\t\tESTADO");
-    printf("\n\n\nUTILIZE O NUMERO CORRESPONDENTE A UMA DAS SEGUINTES OPCOES: ");
+    int Escolha_Estado_Endereco;
+    fprintf(ponteiro_arquivo, "\n\nEstado: ");
+    printf("\n\nUNIDADE FEDERATIVA");
+    printf("\n\nUTILIZE O NUMERO CORRESPONDENTE A UMA DAS SEGUINTES OPCOES: ");
 
     printf("\n\n1 - ACRE");
     printf("\n2 - ALAGOAS");
@@ -1123,142 +1105,116 @@ int main(void)
 
     loop_uf_endereco:
     printf("\n\nDIGITE O VALOR ENTRE 1 e 27: ");
-    scanf("%d", &Escolha_UF_Endereco);
+    scanf(" %d", &Escolha_Estado_Endereco);
 
-    switch (Escolha_UF_Endereco)
+    switch (Escolha_Estado_Endereco)
     {
         case 1 :
-            fprintf(ponteiro_arquivo, "\n1 - AC");
+            fprintf(ponteiro_arquivo, "AC");
             printf("\n1 - AC");
             break;
-
         case 2 :
-            fprintf(ponteiro_arquivo, "\n2 - AL");
+            fprintf(ponteiro_arquivo, "AL");
             printf("\n2 - AL");
             break;
-
         case 3 :
-            fprintf(ponteiro_arquivo, "\n3 - AP");
+            fprintf(ponteiro_arquivo, "AP");
             printf("\n3 - AP");
             break;
-
         case 4 :
-            fprintf(ponteiro_arquivo, "\n4 - AM");
+            fprintf(ponteiro_arquivo, "AM");
             printf("\n4 - AM");
             break;
-
         case 5 :
-            fprintf(ponteiro_arquivo, "\n5 - BA");
+            fprintf(ponteiro_arquivo, "BA");
             printf("\n5 - BA");
             break;
-
         case 6 :
-            fprintf(ponteiro_arquivo, "\n6 - CE");
+            fprintf(ponteiro_arquivo, "CE");
             printf("\n6 - CE");
             break;
-
         case 7 :
-            fprintf(ponteiro_arquivo, "\n7 - DF");
+            fprintf(ponteiro_arquivo, "DF");
             printf("\n7 - DF");
             break;
-
         case 8 :
-            fprintf(ponteiro_arquivo, "\n8 - ES");
+            fprintf(ponteiro_arquivo, "ES");
             printf("\n8 - ES");
             break;
-
         case 9 :
-            fprintf(ponteiro_arquivo, "\n9 - ES");
+            fprintf(ponteiro_arquivo, "GO");
             printf("\n9 - GO");
             break;
-
         case 10 :
-            fprintf(ponteiro_arquivo, "\n10 - MA");
+            fprintf(ponteiro_arquivo, "MA");
             printf("\n10 - MA");
             break;
-
         case 11 :
-            fprintf(ponteiro_arquivo, "\n11 - MT");
+            fprintf(ponteiro_arquivo, "MT");
             printf("\n11 - MT");
             break;
-
         case 12 :
-            fprintf(ponteiro_arquivo, "\n12 - MS");
+            fprintf(ponteiro_arquivo, "MS");
             printf("\n12 - MS");
             break;
-
         case 13 :
-            fprintf(ponteiro_arquivo, "\n13 - MG");
+            fprintf(ponteiro_arquivo, "MG");
             printf("\n13 - MG");
             break;
-
         case 14 :
-            fprintf(ponteiro_arquivo, "\n14 - PA");
+            fprintf(ponteiro_arquivo, "PA");
             printf("\n14 - PA");
             break;
-
         case 15 :
-            fprintf(ponteiro_arquivo, "\n15 - PB");
+            fprintf(ponteiro_arquivo, "PB");
             printf("\n15 - PB");
             break;
-
         case 16 :
-            fprintf(ponteiro_arquivo, "\n16 - PR");
+            fprintf(ponteiro_arquivo, "PR");
             printf("\n16 - PR");
             break;
-
         case 17 :
-            fprintf(ponteiro_arquivo, "\n17 - PE");
+            fprintf(ponteiro_arquivo, "PE");
             printf("\n17 - PE");
             break;
-
         case 18 :
-            fprintf(ponteiro_arquivo, "\n18 - PI");
+            fprintf(ponteiro_arquivo, "PI");
             printf("\n18 - PI");
             break;
-
         case 19 :
-            fprintf(ponteiro_arquivo, "\n19 - RJ");
+            fprintf(ponteiro_arquivo, "RJ");
             printf("\n19 - RJ");
             break;
-
         case 20 :
-            fprintf(ponteiro_arquivo, "\n20 - RN");
+            fprintf(ponteiro_arquivo, "RN");
             printf("\n20 - RN");
             break;
-
         case 21 :
-            fprintf(ponteiro_arquivo, "\n21 - RS");
+            fprintf(ponteiro_arquivo, "RS");
             printf("\n21 - RS");
             break;
-
         case 22 :
-            fprintf(ponteiro_arquivo, "\22 - RO");
+            fprintf(ponteiro_arquivo, "RO");
             printf("\n22 - RO");
             break;
-
         case 23 :
-            fprintf(ponteiro_arquivo, "\n23 - RR");
+            fprintf(ponteiro_arquivo, "RR");
             printf("\n23 - RR");
             break;
-
         case 24 :
-            fprintf(ponteiro_arquivo, "\n24 - SC");
+            fprintf(ponteiro_arquivo, "SC");
             printf("\n24 - SC");
             break;
-
         case 25 :
-            fprintf(ponteiro_arquivo, "\n25 - SP");
+            fprintf(ponteiro_arquivo, "SP");
             printf("\n25 - SP");
             break;
-
         case 26 :
-            fprintf(ponteiro_arquivo, "\n26 - SE");
+            fprintf(ponteiro_arquivo, "SE");
             printf("\n26 - SE");
             break;
-
         case 27 :
-            fprintf(ponteiro_arquivo, "\n27 - TO");
+            fprintf(ponteiro_arquivo, "TO");
             printf("\n27 - TO");
             break;
 
@@ -1266,12 +1222,67 @@ int main(void)
             printf("\nVALOR INVALIDO");
             goto loop_uf_endereco;
     }
-    //Fim do Switch Case para UF do Endereço;
+    //Fim do Switch Case do UF do Titulo
 
+    //-----------------------------------------------------------------------
+
+    int Escolha_Situacao_Funcionario;
     fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\tDATAS CONTRATUAIS\n");
-    printf("\n\n\n\t\t\t\t\t\t\t\t\tDATAS CONTRATUAIS");
+    printf("\n\n\n\t\t\t\t\t\t\t\t\t\tDATAS CONTRATUAIS");
 
-    //Datas de Admissão
+    printf("\n\nFUNCIONARIO ESTA ATIVO?");
+
+    printf("\n1 - ATIVO");
+    printf("\n2 - INATIVO");
+
+    loop_escolha_funcionario:
+    printf("\n\nDIGITE A OPCAO DESEJADA: ");
+    scanf(" %d", &Escolha_Situacao_Funcionario);
+
+    switch (Escolha_Situacao_Funcionario)
+    {
+        case 1 :
+            printf("\nSELECIONADO ATIVO");
+            break;
+        case 2 :
+            printf("\nSELECIONADO INATIVO");
+            break;
+        default :
+            printf("VALOR INVALIDO!");
+            goto loop_escolha_funcionario;
+    }
+
+
+    //Datas Contratuais
+
+    if (Escolha_Situacao_Funcionario == 1)
+    {
+
+    //Data de Admissão
+    int Dia_Admissao;
+    int Mes_Admissao;
+    int Ano_Admissao;
+
+    printf("\n\n\nDATA DE ADMISSAO");
+
+    printf("\n\nDIA: ");
+    scanf("%d", &Dia_Admissao);
+
+    printf("MES: ");
+    scanf("%d", &Mes_Admissao);
+
+    printf("ANO: ");
+    scanf("%d", &Ano_Admissao);
+
+    fprintf(ponteiro_arquivo, "\nData de Admissao: %02d/ %02d/ %d", Dia_Admissao, Mes_Admissao, Ano_Admissao);
+    printf("\nData de Admissao: %02d/ %02d/ %d", Dia_Admissao, Mes_Admissao, Ano_Admissao);
+    }
+
+
+
+    if (Escolha_Situacao_Funcionario == 2)
+    {
+    //Data de Admissão
     int Dia_Admissao;
     int Mes_Admissao;
     int Ano_Admissao;
@@ -1308,12 +1319,12 @@ int main(void)
 
     fprintf(ponteiro_arquivo, "\nData de Afastamento: %02d/ %02d/ %d", Dia_Afastamento, Mes_Afastamento, Ano_Afastamento);
     printf("\nData de Afastamento: %02d/ %02d/ %d", Dia_Afastamento, Mes_Afastamento, Ano_Afastamento);
+    }
 
-    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\t***REGISTRO CONCLUIDO***\n");
+    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t***REGISTRO CONCLUIDO***\n");
     printf("\n\n\n\t\t\t\t\t\t\t\t\t***REGISTRO CONCLUIDO***\n");
 
     fclose(ponteiro_arquivo); //FECHAMENTO DE PONTEIRO
 
-    getch();
-    return (0);
+    return(0);
 }
