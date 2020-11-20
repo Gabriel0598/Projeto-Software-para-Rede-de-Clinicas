@@ -17,7 +17,7 @@ int main(void)
 
     //FECHAMENTO DE PONTEIRO
 
-    fprintf (ponteiro_arquivo, "\t\t\t\t\t\t\t\t\tCADASTRO DE FUNCIONARIOS"); //Para salvar no notepad, referenciado p/ ponteiro
+    fprintf (ponteiro_arquivo, "\t\t\t\t\t\t\t\t    CADASTRO DE FUNCIONARIOS"); //Para salvar no notepad, referenciado p/ ponteiro
     printf ("\t\t\t\t\t\t\t\t\tCADASTRO DE FUNCIONARIOS"); //Para exibir no programa
 
     //Matrícula
@@ -27,6 +27,102 @@ int main(void)
     scanf("%d", &Matricula_Funcionario);
     fprintf(ponteiro_arquivo, "\n\n\nMatricula: %d", Matricula_Funcionario); //Para salvar no notepad
     printf("Matricula: %d", Matricula_Funcionario); //Para exibir no programa o que foi digitado
+
+    //Categoria do Funcionário
+    int Escolha_Categoria_Funcionario;
+    fprintf(ponteiro_arquivo, "\n\nCATEGORIA DO FUNCIONARIO: ");
+    printf("\n\nCATEGORIA DO FUNCIONARIO");
+    printf("\n\nUTILIZE O NUMERO CORRESPONDENTE A UMA DAS SEGUINTES OPCOES: ");
+
+    printf("\n\n1 - FUNCIONARIO GERAL");
+    printf("\n2 - MEDICO");
+    printf("\n3 - ENFERMEIRO");
+
+    loop_categoria_funcionario:
+    printf("\n\nDIGITE O VALOR ENTRE 1 E 3: ");
+    scanf("%d", &Escolha_Categoria_Funcionario);
+
+    switch(Escolha_Categoria_Funcionario)
+    {
+        case 1 :
+        fprintf(ponteiro_arquivo, "FUNCIONARIO(A) GERAL");
+        printf("- SELECIONADO FUNCIONARIO(A) GERAL");
+            break;
+        case 2 :
+        fprintf(ponteiro_arquivo, "MEDICO(A)");
+        printf("- SELECIONADO MEDICO(A)");
+            break;
+        case 3 :
+        fprintf(ponteiro_arquivo, "ENFERMEIRO(A)");
+        printf("- SELECIONADO ENFERMEIRO(A)");
+            break;
+        default :
+        printf("\nVALOR INVALIDO");
+            goto loop_categoria_funcionario; //Looping para levar o usuário de volta a seleção de número, caso digitar incorreto!
+    }
+
+    if(Escolha_Categoria_Funcionario == 2)
+    {
+        char Num_CRM[13];
+        char especialidade_medico[40];
+
+        printf("\n\nCADASTRO CRM");
+        printf("\n\nCRM (NUM/UF): ");
+        scanf(" %s", &Num_CRM);
+        fprintf(ponteiro_arquivo, "\nCADASTRO CRM: %s", Num_CRM);
+        printf("Numero de Registro: %s", Num_CRM);
+
+        printf("\n\nESPECIALIDADE: ");
+        scanf(" %s", &especialidade_medico);
+        fprintf(ponteiro_arquivo, "\nESPECIALIDADE: %s", especialidade_medico);
+        printf("Especialidade: %s", especialidade_medico);
+
+    }
+
+    if(Escolha_Categoria_Funcionario == 3)
+    {
+        char Num_COREN[13];
+        char especialidade_enfermeiro[40];
+
+        printf("\n\nCADASTRO COREN");
+        printf("\n\nCOREN (NUM/UF): ");
+        scanf(" %s", &Num_COREN);
+        fprintf(ponteiro_arquivo, "\nCADASTRO COREN: %s", Num_COREN);
+        printf("Numero de Registro: %s", Num_COREN);
+
+        int Escolha_Nivel_Enfermeiro;
+
+        fprintf(ponteiro_arquivo, "\nNIVEL: ");
+        printf("\n\nNIVEL DA FUNCAO");
+        printf("\n\nUTILIZE O NUMERO CORRESPONDENTE A UMA DAS SEGUINTES OPCOES: ");
+
+        printf("\n\n1 - AUXILIAR");
+        printf("\n2 - TECNICO");
+        printf("\n3 - ENFERMEIRO");
+
+        loop_nivel_enfermeiro:
+        printf("\n\nDIGITE O NIVEL ENTRE 1 E 3: ");
+        scanf("%d", &Escolha_Nivel_Enfermeiro);
+
+        switch(Escolha_Nivel_Enfermeiro)
+        {
+            case 1 :
+            fprintf(ponteiro_arquivo, "AUXILIAR");
+            printf("- SELECIONADO AUXILIAR");
+                break;
+            case 2 :
+            fprintf(ponteiro_arquivo, "TECNICO");
+            printf("- SELECIONADO TECNICO");
+                break;
+            case 3 :
+            fprintf(ponteiro_arquivo, "ENFERMEIRO(A)");
+            printf("- SELECIONADO ENFERMEIRO(A)");
+                break;
+            default :
+            printf("\nVALOR INVALIDO");
+                goto loop_nivel_enfermeiro; //Looping para levar o usuário de volta a seleção de número, caso digitar incorreto!
+        }
+    }
 
     //Tipo de Contrato
     int Escolha_Tipo_Contrato;
@@ -49,29 +145,25 @@ int main(void)
         case 1 :
         fprintf(ponteiro_arquivo, "CONSOLIDACAO DAS LEIS TRABALHISTAS");
         printf("CONTRATO REF. CLT SELECIONADO!");
-        break;
-
+            break;
         case 2 :
         fprintf(ponteiro_arquivo, "PJ - PRESTADOR DE SERVICOS");
         printf("CONTRATO REF. PJ(PRESTADOR DE SERVICOS) SELECIONADO!");
-        break;
-
+            break;
         case 3 :
         fprintf(ponteiro_arquivo, "ESTAGIO");
         printf("CONTRATO REF. ESTAGIO SELECIONADO!");
-        break;
-
+            break;
         case 4 :
         fprintf(ponteiro_arquivo, "JOVEM APRENDIZ");
         printf("CONTRATO REF. JOVEM APRENDIZ SELECIONADO!");
-        break;
-
+            break;
         default :
         printf("\nVALOR INVALIDO");
-        goto loop_tipo_contrato; //Looping para levar o usuário de volta a seleção de número, caso digitar incorreto!
+            goto loop_tipo_contrato; //Looping para levar o usuário de volta a seleção de número, caso digitar incorreto!
     }
 
-    fprintf(ponteiro_arquivo, "\n\n\n\n\t\t\t\t\t\t\t\t\t      DADOS GERAIS");
+    fprintf(ponteiro_arquivo, "\n\n\n\n\t\t\t\t\t\t\t\t\t   DADOS GERAIS");
     printf("\n\n\n\n\t\t\t\t\t\t\t\t\t      DADOS GERAIS");
 
     //Dados de Nome
@@ -110,7 +202,7 @@ int main(void)
     char Email_Corporativo[100];
 
     //Registro de Informações de Telefones:
-    fprintf (ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\t\tCONTATO");
+    fprintf (ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\t    CONTATO");
     printf ("\n\n\n\t\t\t\t\t\t\t\t\t\tCONTATO");
     printf("\n\n\n\t\t\t\t\t\t***NOS CAMPOS DE TELEFONES DIGITE APENAS NUMEROS, NAO UTILIZE SINAIS!***");
 
@@ -158,7 +250,7 @@ int main(void)
 
     //Estado Civil
     int Escolha_EstadoCivil;
-    fprintf(ponteiro_arquivo, "\n\n\t\t\t\t\t\t\t\t\t\tESTADO CIVIL\n\n");
+    fprintf(ponteiro_arquivo, "\n\n\t\t\t\t\t\t\t\t\t  ESTADO CIVIL\n\n");
     printf("\n\n\t\t\t\t\t\t\t\t\t   ESTADO CIVIL");
     printf("\n\n\nUTILIZE O NUMERO CORRESPONDENTE A UMA DAS SEGUINTES OPCOES: ");
 
@@ -177,31 +269,26 @@ int main(void)
         case 1 :
         fprintf(ponteiro_arquivo, "ESTADO CIVIL SOLTEIRO SELECIONADO!");
         printf("ESTADO CIVIL SOLTEIRO SELECIONADO!");
-        break;
-
+            break;
         case 2 :
         fprintf(ponteiro_arquivo, "ESTADO CIVIL CASADO SELECIONADO!");
         printf("ESTADO CIVIL CASADO SELECIONADO!");
-        break;
-
+            break;
         case 3 :
         fprintf(ponteiro_arquivo, "ESTADO CIVIL SEPARADO SELECIONADO!");
         printf("ESTADO CIVIL SEPARADO SELECIONADO!");
-        break;
-
+            break;
         case 4 :
         fprintf(ponteiro_arquivo, "ESTADO CIVIL DIVORCIADO SELECIONADO!");
         printf("ESTADO CIVIL DIVORCIADO SELECIONADO!");
-        break;
-
+            break;
         case 5 :
         fprintf(ponteiro_arquivo, "ESTADO CIVIL VIUVO SELECIONADO!");
         printf("ESTADO CIVIL VIUVO SELECIONADO!");
-        break;
-
+            break;
         default :
         printf("\nVALOR INVALIDO");
-        goto loop_estado_civil;
+            goto loop_estado_civil;
     }
 
     //Filiação
@@ -209,7 +296,7 @@ int main(void)
     char Nome_Mae[100];
     char Nome_Pai[100];
 
-    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\t\tNOME DOS PAIS");
+    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\t  NOME DOS PAIS");
     printf("\n\n\n\t\t\t\t\t\t\t\t\t  NOME DOS PAIS");
 
     //PROBLEMAS DE NOME COM ESPAÇO ACONTECENDO
@@ -225,9 +312,9 @@ int main(void)
     printf("Nome do Pai: %s", Nome_Pai);
 
     //DOCUMENTOS GERAIS
-    fprintf(ponteiro_arquivo, "\n\n\n\n\t\t\t\t\t\t\t\t\t  DOCUMENTOS");
+    fprintf(ponteiro_arquivo, "\n\n\n\n\t\t\t\t\t\t\t\t\t   DOCUMENTOS");
     printf("\n\n\n\n\t\t\t\t\t\t\t\t\t  DOCUMENTOS");
-    fprintf(ponteiro_arquivo, "\n\n\n\n\t\t\t\t\t\t\t\t\tREGISTRO GERAL");
+    fprintf(ponteiro_arquivo, "\n\n\n\n\t\t\t\t\t\t\t\t\t  REGISTRO GERAL");
     printf("\n\n\n\n\t\t\t\t\t\t\t\t\tREGISTRO GERAL");
 
     //REGISTRO GERAL
@@ -315,137 +402,110 @@ int main(void)
             fprintf(ponteiro_arquivo, "AC");
             printf("\n1 - AC");
             break;
-
         case 2 :
             fprintf(ponteiro_arquivo, "AL");
             printf("\n2 - AL");
             break;
-
         case 3 :
             fprintf(ponteiro_arquivo, "AP");
             printf("\n3 - AP");
             break;
-
         case 4 :
             fprintf(ponteiro_arquivo, "AM");
             printf("\n4 - AM");
             break;
-
         case 5 :
             fprintf(ponteiro_arquivo, "BA");
             printf("\n5 - BA");
             break;
-
         case 6 :
             fprintf(ponteiro_arquivo, "CE");
             printf("\n6 - CE");
             break;
-
         case 7 :
             fprintf(ponteiro_arquivo, "DF");
             printf("\n7 - DF");
             break;
-
         case 8 :
             fprintf(ponteiro_arquivo, "ES");
             printf("\n8 - ES");
             break;
-
         case 9 :
             fprintf(ponteiro_arquivo, "GO");
             printf("\n9 - GO");
             break;
-
         case 10 :
             fprintf(ponteiro_arquivo, "MA");
             printf("\n10 - MA");
             break;
-
         case 11 :
             fprintf(ponteiro_arquivo, "MT");
             printf("\n11 - MT");
             break;
-
         case 12 :
             fprintf(ponteiro_arquivo, "MS");
             printf("\n12 - MS");
             break;
-
         case 13 :
             fprintf(ponteiro_arquivo, "MG");
             printf("\n13 - MG");
             break;
-
         case 14 :
             fprintf(ponteiro_arquivo, "PA");
             printf("\n14 - PA");
             break;
-
         case 15 :
             fprintf(ponteiro_arquivo, "PB");
             printf("\n15 - PB");
             break;
-
         case 16 :
             fprintf(ponteiro_arquivo, "PR");
             printf("\n16 - PR");
             break;
-
         case 17 :
             fprintf(ponteiro_arquivo, "PE");
             printf("\n17 - PE");
             break;
-
         case 18 :
             fprintf(ponteiro_arquivo, "PI");
             printf("\n18 - PI");
             break;
-
         case 19 :
             fprintf(ponteiro_arquivo, "RJ");
             printf("\n19 - RJ");
             break;
-
         case 20 :
             fprintf(ponteiro_arquivo, "RN");
             printf("\n20 - RN");
             break;
-
         case 21 :
             fprintf(ponteiro_arquivo, "RS");
             printf("\n21 - RS");
             break;
-
         case 22 :
             fprintf(ponteiro_arquivo, "RO");
             printf("\n22 - RO");
             break;
-
         case 23 :
             fprintf(ponteiro_arquivo, "RR");
             printf("\n23 - RR");
             break;
-
         case 24 :
             fprintf(ponteiro_arquivo, "SC");
             printf("\n24 - SC");
             break;
-
         case 25 :
             fprintf(ponteiro_arquivo, "SP");
             printf("\n25 - SP");
             break;
-
         case 26 :
             fprintf(ponteiro_arquivo, "SE");
             printf("\n26 - SE");
             break;
-
         case 27 :
             fprintf(ponteiro_arquivo, "TO");
             printf("\n27 - TO");
             break;
-
         default :
             printf("\nVALOR INVALIDO");
             goto loop_uf_rg;
@@ -453,7 +513,7 @@ int main(void)
     //Fim do Switch Case para UF do RG
     //ENCERRA RG
 
-    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\tCADASTRO DE PESSOAS FISICAS");
+    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t    CADASTRO DE PESSOAS FISICAS");
     printf("\n\n\n\t\t\t\t\t\t\t\t\tCADASTRO DE PESSOAS FISICAS");
 
     //CADASTRO DE PESSOAS FÍSICAS
@@ -482,7 +542,7 @@ int main(void)
     printf("\nData de Expedicao: %02d/ %02d/ %d", Dia_Exped_CPF, Mes_Exped_CPF, Ano_Exped_CPF);
     //ENCERRA CPF
 
-    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\tCARTEIRA DE TRABALHO E PREVIDENCIA SOCIAL");
+    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t   CARTEIRA DE TRABALHO E PREVIDENCIA SOCIAL");
     printf("\n\n\n\t\t\t\t\t\t\t\tCARTEIRA DE TRABALHO E PREVIDENCIA SOCIAL");
 
     //CTPS
@@ -696,7 +756,6 @@ int main(void)
             fprintf(ponteiro_arquivo, "TO");
             printf("\n27 - TO");
             break;
-
         default :
             printf("\nVALOR INVALIDO");
             goto loop_uf_titulo;
@@ -726,7 +785,7 @@ int main(void)
 
     //INÍCIO CERTIFICADO MILITAR
     int Escolha_Certificado_Militar;
-    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\tRESERVISTA\n");
+    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\t   RESERVISTA\n");
     printf("\n\n\n\t\t\t\t\t\t\t\t\t\t RESERVISTA");
 
     printf("\n\n\nESCOLHA O NUMERO CORRESPONDENTE AO DOCUMENTO: ");
@@ -748,7 +807,6 @@ int main(void)
             fprintf(ponteiro_arquivo, "\nSelecionado: Reservista");
             printf("\nSelecionado: Reservista");
             break;
-
         default :
             printf("VALOR INVALIDO!");
             goto loop_reservista;
@@ -803,7 +861,7 @@ int main(void)
     int Matricula_Registro;
     int Folha_Registro;
 
-    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\tREGISTRO CIVIL");
+    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\t  REGISTRO CIVIL");
     printf("\n\n\n\t\t\t\t\t\t\t\t\t\tREGISTRO CIVIL");
 
     printf("\n\n\nCARTORIO EMISSOR: ");
@@ -958,7 +1016,7 @@ int main(void)
 
     //----------------------------------------------------
 
-    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\tDADOS DA FORMACAO");
+    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\t  DADOS DA FORMACAO");
     printf("\n\n\n\t\t\t\t\t\t\t\t\t\tDADOS DA FORMACAO");
 
     //Curso
@@ -1021,8 +1079,8 @@ int main(void)
     //----------------------------------------------------------------
 
     //ENDEREÇO
-    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\tENDERECO\n");
-    printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\tENDERECO");
+    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\t    ENDERECO\n");
+    printf("\n\n\n\t\t\t\t\t\t\t\t\t\tENDERECO");
 
     char Logradouro [100]; //Rua, Av, Praça, etc;
     char Num_Endereco[10];
@@ -1217,7 +1275,6 @@ int main(void)
             fprintf(ponteiro_arquivo, "TO");
             printf("\n27 - TO");
             break;
-
         default :
             printf("\nVALOR INVALIDO");
             goto loop_uf_endereco;
@@ -1227,7 +1284,7 @@ int main(void)
     //-----------------------------------------------------------------------
 
     int Escolha_Situacao_Funcionario;
-    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\tDATAS CONTRATUAIS\n");
+    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\t  DATAS CONTRATUAIS\n");
     printf("\n\n\n\t\t\t\t\t\t\t\t\t\tDATAS CONTRATUAIS");
 
     printf("\n\nFUNCIONARIO ESTA ATIVO?");
@@ -1321,7 +1378,7 @@ int main(void)
     printf("\nData de Afastamento: %02d/ %02d/ %d", Dia_Afastamento, Mes_Afastamento, Ano_Afastamento);
     }
 
-    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t***REGISTRO CONCLUIDO***\n");
+    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\t***REGISTRO CONCLUIDO***\n");
     printf("\n\n\n\t\t\t\t\t\t\t\t\t***REGISTRO CONCLUIDO***\n");
 
     fclose(ponteiro_arquivo); //FECHAMENTO DE PONTEIRO
