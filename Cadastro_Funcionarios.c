@@ -24,12 +24,12 @@ int main(void)
     printf("\n\n\n\nMATRICULA");
     printf("\n\nDIGITE O NUMERO DA MATRICULA DO FUNCIONARIO: ");
     scanf("%d", &Matricula_Funcionario);
-    fprintf(ponteiro_arquivo, "\n\n\nMatricula: %d", Matricula_Funcionario); //Para salvar no notepad
+    fprintf(ponteiro_arquivo, "\n\nMatricula: %d", Matricula_Funcionario); //Para salvar no notepad
     printf("Matricula: %d", Matricula_Funcionario); //Para exibir no programa o que foi digitado
 
     //Categoria do Funcionário
     int Escolha_Categoria_Funcionario;
-    fprintf(ponteiro_arquivo, "\n\nCATEGORIA DO FUNCIONARIO: ");
+    fprintf(ponteiro_arquivo, "\nCATEGORIA DO FUNCIONARIO: ");
     printf("\n\nCATEGORIA DO FUNCIONARIO");
     printf("\n\nUTILIZE O NUMERO CORRESPONDENTE A UMA DAS SEGUINTES OPCOES: ");
 
@@ -81,7 +81,6 @@ int main(void)
     if(Escolha_Categoria_Funcionario == 3)
     {
         char Num_COREN[13];
-        char especialidade_enfermeiro[40];
 
         printf("\n\nCADASTRO COREN");
         printf("\n\nCOREN (NUM/UF): ");
@@ -126,7 +125,7 @@ int main(void)
     //Tipo de Contrato
     int Escolha_Tipo_Contrato;
 
-    fprintf(ponteiro_arquivo, "\n\nTIPO DE CONTRATO: ");
+    fprintf(ponteiro_arquivo, "\nTIPO DE CONTRATO: ");
     printf("\n\nTIPO DE CONTRATO");
     printf("\n\nUTILIZE O NUMERO CORRESPONDENTE A UMA DAS SEGUINTES OPCOES: ");
 
