@@ -6,7 +6,7 @@ int main(void)
     //PONTEIRO PARA SALVAR DADOS NO NOTEPAD
     FILE *ponteiro_arquivo;
 
-    ponteiro_arquivo = fopen("Ficha_Funcionario.txt", "w"); //ponteiro vai receber o resultado da abertura do arquivo "Ficha_Funcionario" para gravação "W";
+    ponteiro_arquivo = fopen("Ficha_Funcionario.txt", "a"); //ponteiro vai receber o resultado da abertura do arquivo "Ficha_Funcionario" para gravação "W";
 
     if (ponteiro_arquivo == NULL)
     {
@@ -1376,7 +1376,7 @@ int main(void)
     printf("\nData de Afastamento: %02d/ %02d/ %d", Dia_Afastamento, Mes_Afastamento, Ano_Afastamento);
     }
 
-    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\t***REGISTRO CONCLUIDO***\n");
+    fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\t***REGISTRO CONCLUIDO***\n\n\n\n");
     printf("\n\n\n\t\t\t\t\t\t\t\t\t***REGISTRO CONCLUIDO***\n");
 
     fclose(ponteiro_arquivo); //FECHAMENTO DE PONTEIRO
