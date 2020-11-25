@@ -25,7 +25,7 @@ int main(void)
     setlocale(LC_ALL, "Portuguese"); //Conversão de língua para português
 
     fprintf (ponteiro_arquivo, "\t\t\t\t\t\t\t\t  AGENDAMENTO DE EXAMES"); //Para salvar no notepad, referenciado p/ ponteiro
-    printf ("\t\t\t\t\t\t\t\t\tAGENDAMENTO DE EXAMES"); //Para exibir no programa
+    printf ("\t\t\t\t\t\t\t\t\t   AGENDAMENTO DE EXAMES"); //Para exibir no programa
 
     char Nome_Paciente[100];
     printf("\n\n\n\nNome do Paciente: ");
@@ -44,6 +44,8 @@ int main(void)
 
     printf("\n1 - SIM");
     printf("\n2 - NAO");
+
+    Loop_Escolha_Convenio:
 
     printf("\n\nDIGITE A OPÇÃO DESEJADA: ");
     scanf(" %d", &Escolha_Convenio);
@@ -168,7 +170,11 @@ int main(void)
         printf("\n\nNÃO POSSUI!");
     }
 
-
+    else
+    {
+        printf("\nVALOR INVÁLIDO");
+        goto Loop_Escolha_Convenio;
+    }
 
     //Lista de Especialidades
     int Escolha_Especialidade_Exame;
