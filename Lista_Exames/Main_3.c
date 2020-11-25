@@ -18,6 +18,7 @@ int main(void)
     if (ponteiro_arquivo == NULL)
     {
         printf("\n\nErro na abertura do arquivo!");
+        return 1;
     }
     //FECHAMENTO DE PONTEIRO
 
@@ -331,5 +332,10 @@ int main(void)
     printf("\n\n\t\t\t\t\t\t\t\t\t***REGISTRO CONCLUÍDO***\n");
 
     fclose(ponteiro_arquivo);
+
+    printf("\n\t\t\t\t\t\t\t\t***DIGITE ENTER PARA RETORNAR AO MENU***\n\n\n\n");
+    getch();
+    system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\Código Fonte PIM\\Tela_Inicial\\Main_0.exe\"");
+
     return (0);
 }
