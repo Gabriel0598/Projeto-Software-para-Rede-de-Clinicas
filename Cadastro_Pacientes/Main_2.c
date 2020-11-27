@@ -626,6 +626,7 @@ int main(void)
     }
     //FIM SWITCH CASE
 
+
     printf ("\n\n");
 
     fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\t***REGISTRO CONCLUÍDO***\n\n\n\n");
