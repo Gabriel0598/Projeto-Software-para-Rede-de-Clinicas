@@ -29,38 +29,38 @@ int main(void)
     {
         case 1 :
         //Leva o programa para a tela do executável de cadastro de funcionários
-        system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\Código Fonte PIM\\Cadastro_Funcionarios\\Main_1.exe\"");
+        system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\UNIP\\2° Semestre\\PIM 2 Sem\\Código Fonte PIM\\Cadastro_Funcionarios\\Main_1.exe\"");
             break;
         case 2 :
         //Leva o programa para a tela do executável de consulta de funcionários
-        system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\Código Fonte PIM\\Tela_Inicial\\Main_1_R.exe\"");
+        system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\UNIP\\2° Semestre\\PIM 2 Sem\\Código Fonte PIM\\Tela_Inicial\\Main_1_R.exe\"");
             break;
         case 3 :
         //Leva o programa para a tela do executável de cadastro de pacientes
-        system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\Código Fonte PIM\\Cadastro_Pacientes\\Main_2.exe\"");
+        system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\UNIP\\2° Semestre\\PIM 2 Sem\\Código Fonte PIM\\Cadastro_Pacientes\\Main_2.exe\"");
             break;
         case 4 :
         //Leva o programa para a tela do executável de consulta de pacientes
-        system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\Código Fonte PIM\\Tela_Inicial\\Main_3_R.exe\"");
+        system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\UNIP\\2° Semestre\\PIM 2 Sem\\Código Fonte PIM\\Tela_Inicial\\Main_3_R.exe\"");
         case 5 :
         //Leva o programa para a tela do executável de agendamento de exames
-        system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\Código Fonte PIM\\Lista_Exames\\Main_3.exe\"");
+        system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\UNIP\\2° Semestre\\PIM 2 Sem\\Código Fonte PIM\\Lista_Exames\\Main_3.exe\"");
             break;
         case 6 :
         //Leva o programa para a tela do executável de consulta de exames agendados
-        system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\Código Fonte PIM\\Tela_Inicial\\Main_5_R.exe\"");
+        system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\UNIP\\2° Semestre\\PIM 2 Sem\\Código Fonte PIM\\Tela_Inicial\\Main_5_R.exe\"");
             break;
         case 7 :
         //Leva o programa para a tela do executável de cadastro de pagamentos
-        system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\Código Fonte PIM\\Pagamentos\\Main_4.exe\"");
+        system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\UNIP\\2° Semestre\\PIM 2 Sem\\Código Fonte PIM\\Pagamentos\\Main_4.exe\"");
             break;
         case 8 :
         //Leva o programa para a tela do executável de consulta de pagamentos registrados
-        system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\Código Fonte PIM\\Tela_Inicial\\Main_7_R.exe\"");
+        system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\UNIP\\2° Semestre\\PIM 2 Sem\\Código Fonte PIM\\Tela_Inicial\\Main_7_R.exe\"");
             break;
         case 9 :
         //Leva o programa para a tela do executável de lista de convênios
-        system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\Código Fonte PIM\\Lista_Convenios\\Main_5.exe\"");
+        system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\UNIP\\2° Semestre\\PIM 2 Sem\\Código Fonte PIM\\Lista_Convenios\\Main_5.exe\"");
             break;
         case 10 :
         //Encerrar programa
