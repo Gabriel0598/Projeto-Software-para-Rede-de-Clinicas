@@ -53,9 +53,15 @@ int main(void)
     fprintf (ponteiro_arquivo, "\nCPF:  %s", CPF_Paciente);
     //printf ("\tCPF: %s", CPF_Paciente);
 
+    //CIDADE
+    char Cidade_Paciente[100];
+    printf("\nCIDADE: ");
+    scanf(" %[^\n]s", &Cidade_Paciente);
+    fprintf(ponteiro_arquivo, "\nCIDADE: %s", Cidade_Paciente);
+
     //SWITCH CASE NATURALIDADE!
     int Naturalidade;
-    fprintf(ponteiro_arquivo, "\nNATURALIDADE: ");
+    fprintf(ponteiro_arquivo, "\nESTADO: ");
     printf("\nNATURALIDADE");
     printf("\n\nUTILIZE O NÚMERO CORRESPONDENTE A UMA DAS SEGUINTES OPÇÕES: ");
 
