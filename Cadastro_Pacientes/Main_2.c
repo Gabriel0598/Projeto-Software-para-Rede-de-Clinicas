@@ -626,7 +626,6 @@ int main(void)
     }
     //FIM SWITCH CASE
 
-
     printf ("\n\n");
 
     fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\t***REGISTRO CONCLUÍDO***\n\n\n\n");
@@ -636,7 +635,7 @@ int main(void)
 
     printf("\n\t\t\t\t\t\t\t\t***DIGITE ENTER PARA RETORNAR AO MENU***\n\n\n\n");
     getch();
-    system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\Código Fonte PIM\\Tela_Inicial\\Main_0.exe\"");
+    system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\UNIP\\2° Semestre\\PIM 2 Sem\\Código Fonte PIM\\Tela_Inicial\\Main_0.exe\"");
 
     return (0);
 }
