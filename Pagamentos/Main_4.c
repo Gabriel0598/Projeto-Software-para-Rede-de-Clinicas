@@ -170,15 +170,15 @@ int main(void)
     switch (Condicao_Pagamento)
     {
     case 1:
-        fprintf(ponteiro_arquivo,"\nVALOR CARTAO DEBITO = %.2f %f", Valor_especialidade);
+        fprintf(ponteiro_arquivo,"\nVALOR CARTAO DEBITO = %.2f", Valor_especialidade);
         printf("\nVALOR CARTAO DEBITO = %.2f", Valor_especialidade);
         break;
     case 2:
-        fprintf(ponteiro_arquivo,"\nVALOR PARCELADO EM DUAS VEZES = 2 X %.2f %f", metade_valor_especialidade);
+        fprintf(ponteiro_arquivo,"\nVALOR PARCELADO EM DUAS VEZES = 2 X %.2f", metade_valor_especialidade);
         printf("\nVALOR PARCELADO EM DUAS VEZES = 2 X %.2f", metade_valor_especialidade);
         break;
     case 3:
-        fprintf(ponteiro_arquivo,"\nVALOR BOLETO BANCARIO = %.2f %f", Valor_especialidade);
+        fprintf(ponteiro_arquivo,"\nVALOR BOLETO BANCARIO = %.2f", Valor_especialidade);
         printf("\nVALOR BOLETO BANCARIO = %.2f ", Valor_especialidade);
         break;
 
