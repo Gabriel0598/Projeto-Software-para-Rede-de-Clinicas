@@ -10,6 +10,6 @@ int main()
     printf("\n\t\t\t\t\t\t\t\t\tCONSULTA DE EXAMES AGENDADOS\n\n");
     printf("\t\t\t\t\t\t\t\t***DIGITE ENTER PARA RETORNAR AO MENU***\n\n\n\n");
     getch();
-    system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\Código Fonte PIM\\Tela_Inicial\\Main_0.exe\"");
+    system("\"C:\\Users\\Gabri\\OneDrive\\Documentos\\UNIP\\2° Semestre\\Pim 2 Sem\\Código Fonte PIM\\Tela_Inicial\\Main_0.exe\"");
     return(0);
 }
