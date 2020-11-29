@@ -170,12 +170,6 @@ int main(void)
         printf("\n\nNÃO POSSUI!");
     }
 
-    else
-    {
-        printf("\nVALOR INVÁLIDO");
-        goto Loop_Escolha_Convenio;
-    }
-
     //Lista de Especialidades
     int Escolha_Especialidade_Exame;
     fprintf(ponteiro_arquivo, "Exame selecionado: ");
