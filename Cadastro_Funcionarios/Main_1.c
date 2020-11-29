@@ -22,7 +22,7 @@ int main(void)
     fprintf (ponteiro_arquivo, "\t\t\t\t\t\t\t\t    CADASTRO DE FUNCIONÁRIOS"); //Para salvar no notepad, referenciado p/ ponteiro
     printf ("\t\t\t\t\t\t\t\t\tCADASTRO DE FUNCIONÁRIOS"); //Para exibir no programa
 
-    printf("\n\n\n\n***CASO NÃO HAJA DADOS COMO NOMES DIGITE 'NÃO HÁ DADOS'/ CASOS NÃO HAJA NÚMERO DE TELEFONE DIGITE TODOS OS INFORME UMA SEQUÊNCIA DE ZEROS(0)***\n\n");
+    printf("\n\n\n\n***CASO NÃO HAJA DADOS COMO NOMES DIGITE 'NÃO HÁ DADOS'/ CASOS NÃO HAJA NÚMERO DE TELEFONE, INFORME UMA SEQUÊNCIA DE ZEROS(0)***\n\n");
 
     //Matrícula
     int Matricula_Funcionario;
@@ -581,17 +581,17 @@ int main(void)
     //ENCERRANDO CTPS
 
     //TÍTULO DE ELEITOR
-    int Num_Inscricao;
+    char Num_Inscricao[30];
     int Zona;
     char Secao[4];
 
     fprintf(ponteiro_arquivo, "\n\n\n\t\t\t\t\t\t\t\t\tTÍTULO DE ELEITOR");
     printf("\n\n\n\t\t\t\t\t\t\t\t\tTÍTULO DE ELEITOR");
 
-    printf("\n\n\nNÚMERO DE INSCRIÇÃO (INCLUINDO DÍGITO VERIFICADOR - APENAS NÚMEROS): ");
-    scanf("%i", &Num_Inscricao);
-    fprintf(ponteiro_arquivo, "\n\nNúmero de Inscrição: %i", Num_Inscricao);
-    printf("Número de Inscrição: %i", Num_Inscricao);
+    printf("\n\n\nNÚMERO DE INSCRIÇÃO (INCLUINDO DÍGITO VERIFICADOR): ");
+    scanf(" %[^\n]s", &Num_Inscricao);
+    fprintf(ponteiro_arquivo, "\n\nNúmero de Inscrição: %s", Num_Inscricao);
+    printf("Número de Inscrição: %s", Num_Inscricao);
 
     printf("\n\nZONA: ");
     scanf("%i", &Zona);
