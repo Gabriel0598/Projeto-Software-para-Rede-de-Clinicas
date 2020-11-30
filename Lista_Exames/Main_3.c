@@ -172,7 +172,7 @@ int main(void)
 
     //Lista de Especialidades
     int Escolha_Especialidade_Exame;
-    fprintf(ponteiro_arquivo, "Exame selecionado: ");
+    fprintf(ponteiro_arquivo, "\nExame selecionado: ");
     printf("\n\n\n\t\t\t\t\t\t\t\t\t\tESPECIALIDADE");
     printf("\n\n\nUTILIZE O NÚMERO CORRESPONDENTE A ESPECIALIDADE QUE DESEJA REALIZAR: ");
 
